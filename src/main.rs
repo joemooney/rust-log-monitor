@@ -42,7 +42,7 @@ fn read_block(log_mon: &mut LogReader) -> std::io::Result<()> {
 
 #[allow(dead_code)]
 fn read_range(log_mon: &mut LogReader, from: isize, to: isize) -> std::io::Result<()> {
-    let _s = log_mon.read_range(from, to, true)?;
+    let s = log_mon.read_range(from, to, true)?;
     print!("{}", s);
     Ok(())
 }
