@@ -48,7 +48,7 @@ fn read_range(log_mon: &mut LogReader, from: isize, to: isize) -> std::io::Resul
 }
 
 fn main()  -> std::io::Result<()> {
-    let mut log_mon = open_log("foo2.txt")?;
+    let mut log_mon = open_log("foo.txt")?;
     // read_using_iterator(&mut log_mon)?;
     // read_block(&mut log_mon)?;
 
