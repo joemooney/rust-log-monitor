@@ -168,10 +168,10 @@ impl LogReader {
                 let num_lines = last_line_to_read - (from as isize) + 2;
                 //if last_line_to_read <= 0 || num_lines =< 0 {
                 if num_lines <= 0 {
-                    println!("total lines:{} from:{}", last_line_to_read, from);
+                    // println!("total lines:{} from:{}", last_line_to_read, from);
                     return Ok(String::from(""));
                 }
-                println!("reading from:{} to:{}", from, last_line_to_read);
+                // println!("reading from:{} to:{}", from, last_line_to_read);
                 self.reopen()?;
                 self.skip_n_lines(from - 1);
                 self.read_n_lines(num_lines as usize)
@@ -252,7 +252,7 @@ impl LogReader {
             if ! force {
                 return Ok(String::new())
             }
-            println!("need to reopen the file");
+            // println!("need to reopen the file");
             self.reopen()?;
         }
         let skip = from - self.current_line;
@@ -304,7 +304,7 @@ impl Iterator for LogReader {
                     None 
                 } else { 
                     self.current_line += 1;
-                    println!("current_line:{}", self.current_line);
+                    // println!("current_line:{}", self.current_line);
                     Some(Rc::clone(&self.buf)) 
                 }
             )

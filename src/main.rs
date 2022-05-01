@@ -42,13 +42,13 @@ fn read_block(log_mon: &mut LogReader) -> std::io::Result<()> {
 
 #[allow(dead_code)]
 fn read_range(log_mon: &mut LogReader, from: isize, to: isize) -> std::io::Result<()> {
-    let s = log_mon.read_range(from, to, true)?;
+    let _s = log_mon.read_range(from, to, true)?;
     print!("{}", s);
     Ok(())
 }
 
 fn main()  -> std::io::Result<()> {
-    let mut log_mon = open_log("foo.txt")?;
+    let mut log_mon = open_log("foo2.txt")?;
     // read_using_iterator(&mut log_mon)?;
     // read_block(&mut log_mon)?;
 
